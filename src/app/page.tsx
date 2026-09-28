@@ -1,12 +1,13 @@
-import SectionHero from "@/components/sections/home/HeroSection";
-import SectionHowItWorks from "@/components/sections/home/HowItWorks";
-import Image from "next/image";
+import HowItWorks from "@/components/sections/home/HowItWorks";
+import Hero from "@/components/sections/home/Hero";
+import GamesList from "@/components/sections/home/GamesList";
 
 export default function PageHome() {
   return (
     <main>
-      <SectionHero />
-      <SectionHowItWorks />
+      <Hero />
+      <GamesList />
+      <HowItWorks />
     </main>
   );
 }

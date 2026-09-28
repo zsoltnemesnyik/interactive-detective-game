@@ -16,8 +16,22 @@ export const HERO = {
 export const HOW_IT_WORKS = {
   heading: "Hogyan működik?",
   steps: [
-    { title: "Válassz játékot", description: "Böngéssz a városok és témák között." },
-    { title: "Hívd meg a csapatod", description: "Oszd meg a kódot, csatlakozzatok együtt." },
-    { title: "Nyomozzatok", description: "Fejtsétek meg a rejtélyeket együtt, valós időben." },
+    {
+      title: "Válassz játékot",
+      description: "Böngéssz a városok és témák között.",
+    },
+    {
+      title: "Hívd meg a csapatod",
+      description: "Oszd meg a kódot, csatlakozzatok együtt.",
+    },
+    {
+      title: "Nyomozzatok",
+      description: "Fejtsétek meg a rejtélyeket együtt, valós időben.",
+    },
   ],
+} as const;
+
+export const GAMES_LIST = {
+  heading: "Népszerű játékok",
+  startButton: "Indítás",
 } as const;
