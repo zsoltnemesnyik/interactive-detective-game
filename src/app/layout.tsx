@@ -1,15 +1,22 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Nunito, Bree_Serif, Special_Elite } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+const nunito = Nunito({
+  variable: "--font-nunito",
+  subsets: ["latin", "latin-ext"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const breeSerif = Bree_Serif({
+  variable: "--font-bree-serif",
+  subsets: ["latin", "latin-ext"],
+  weight: "400",
+});
+
+const specialElite = Special_Elite({
+  variable: "--font-special-elite",
+  subsets: ["latin", "latin-ext"],
+  weight: "400",
 });
 
 export const metadata: Metadata = {
@@ -20,8 +27,8 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      lang="hu"
+      className={`${nunito.variable} ${breeSerif.variable} ${specialElite.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col">{children}</body>
     </html>

@@ -7,9 +7,9 @@
 
 @theme inline {
   /* Fonts — wired up in layout.tsx in the next step */
-  --font-sans: var(--font-sans);
-  --font-mono: var(--font-geist-mono);
-  --font-heading: var(--font-sans);
+  --font-sans: var(--font-nunito);
+  --font-mono: var(--font-special-elite);
+  --font-heading: var(--font-bree-serif);
 
   /* Roles (used by shadcn components) */
   --color-background: var(--background);
@@ -98,12 +98,15 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
   }
+
   html {
     @apply font-sans;
   }
+
   /* Tailwind v4 no longer sets cursor: pointer on buttons */
   button:not(:disabled),
   [role="button"]:not(:disabled) {
