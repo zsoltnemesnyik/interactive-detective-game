@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { ROUTES } from "@/lib/constants";
 import { NAV } from "@/lib/strings";
 
-export function Navbar() {
+const Navbar = () => {
   return (
     <header>
       <nav className="max-w-7xl mx-auto px-6 py-4">
@@ -26,3 +26,5 @@ export function Navbar() {
     </header>
   )
 }
+
+export default Navbar
