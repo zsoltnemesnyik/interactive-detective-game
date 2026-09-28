@@ -6,7 +6,7 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  /* Fonts — wired up in layout.tsx in the next step */
+  /* Fonts — set by next/font in layout.tsx */
   --font-sans: var(--font-nunito);
   --font-mono: var(--font-special-elite);
   --font-heading: var(--font-bree-serif);
