@@ -1,3 +1,4 @@
+import { Database } from "@/types";
 import { MAX_LIVES } from "@/core/lives"
 
 export const ROUTES = {
@@ -12,7 +13,7 @@ export const GAME_DEFAULTS = {
   max_lives: MAX_LIVES,
 }
 
-export const DIFFICULTY_LABELS: Record<string, string> = {
+export const DIFFICULTY_LABELS: Record<Database["public"]["Enums"]["difficulty"], string> = {
   easy: "Könnyű",
   medium: "Közepes",
   hard: "Nehéz",
