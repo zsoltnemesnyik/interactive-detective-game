@@ -1,12 +1,18 @@
 import { Game } from "@/types";
 import GamesList from "@/components/GamesList"
 import { GameQueries } from "@/lib/queries";
+import { HIGHLIGHTED_GAMES } from "@/lib/strings";
 
-const HighlightedGames = async () => {
+const HighlightedGames = async ({ title }: { title: string }) => {
   const games: Game[] = await GameQueries.getAllGames();
 
   return (
-    <GamesList games={games} />
+    <>
+      <h2 className="mb-12 text-center text-3xl font-bold">
+        {title}
+      </h2>
+      <GamesList games={games} />
+    </>
   )
 }
 export default HighlightedGames

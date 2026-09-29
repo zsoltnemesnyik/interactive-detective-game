@@ -31,7 +31,11 @@ export const HOW_IT_WORKS = {
   ],
 } as const;
 
-export const GAMES_LIST = {
+export const HIGHLIGHTED_GAMES = {
   heading: "Népszerű játékok",
+} as const;
+
+export const GAMESLIST = {
   startButton: "Indítás",
+  noGames: "Játékok nincsenek",
 } as const;
