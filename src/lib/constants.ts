@@ -5,7 +5,14 @@ export const ROUTES = {
   home: "/",
   games: "/games",
   game: "/game",
-  login: "/login",
+  auth: "/login",
+  admin: {
+    home: "/admin",
+    dashboard: "/admin/dashboard",
+    games: "/admin/games",
+    game: "/admin/games/[id]",
+    newGame: "/admin/games/new",
+  }
 } as const;
 
 export const GAME_DEFAULTS = {

@@ -1,18 +1,23 @@
 import { createClient } from "@/utils/supabase/server";
 
 export const GameQueries = {
-  getAllGames: async () => {
+  getAllGames: async (filter?: "published" | "draft") => {
     const supabase = await createClient();
 
-    const { data, error } = await supabase
+    let query = supabase
       .from("games")
       .select("*")
-      .eq("is_published", true)
       .order("created_at", { ascending: false });
-    if (error) {
-      throw new Error(error.message);
+
+    if (filter === "published") {
+      query = query.eq("is_published", true);
+    } else if (filter === "draft") {
+      query = query.eq("is_published", false);
     }
 
+    const { data, error } = await query;
+
+    if (error) throw new Error(error.message);
     return data;
   },
   getSingleGame: async (id: string) => {

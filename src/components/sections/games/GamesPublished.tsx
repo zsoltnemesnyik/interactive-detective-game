@@ -3,7 +3,7 @@ import { GameQueries } from "@/lib/queries";
 import GamesList from "@/components/GamesList";
 
 const GamesPublished = async () => {
-  const games: Game[] = await GameQueries.getAllGames();
+  const games: Game[] = await GameQueries.getAllGames("published");
 
   return (
     <GamesList games={games} />
