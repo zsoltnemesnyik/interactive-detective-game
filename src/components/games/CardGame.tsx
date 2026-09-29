@@ -3,6 +3,7 @@ import Link from "next/link"
 import { GAMESLIST } from "@/lib/strings"
 import { Button } from "@/components/ui/button"
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card"
+import { ROUTES } from "@/lib/constants"
 
 const CardGame = ({ game }: { game: Game }) => {
   return (
@@ -14,7 +15,7 @@ const CardGame = ({ game }: { game: Game }) => {
         </CardDescription>
       </CardHeader>
       <CardContent>
-        <Link href={`/games/${game.id}`}>
+        <Link href={`${ROUTES.games}/${game.id}`}>
           <Button className="w-full">{GAMESLIST.startButton}</Button>
         </Link>
       </CardContent>

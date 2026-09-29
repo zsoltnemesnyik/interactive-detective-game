@@ -28,7 +28,7 @@ const buttonVariants = [
   { label: "CTA", variant: "cta" },
 ] as const;
 
-export default function StyleguidePage() {
+export default function PageStyleguide() {
   return (
     <main className="min-h-screen bg-background p-8 space-y-12">
       <header>

@@ -31,11 +31,16 @@ export const HOW_IT_WORKS = {
   ],
 } as const;
 
+export const GAMESLIST = {
+  startButton: "Indítás",
+  noGames: "Játékok nincsenek",
+} as const;
+
 export const HIGHLIGHTED_GAMES = {
   heading: "Népszerű játékok",
 } as const;
 
-export const GAMESLIST = {
-  startButton: "Indítás",
-  noGames: "Játékok nincsenek",
+export const PUBLISHED_GAMES = {
+  heading: "Játékok",
+  description: "Itt jelenik meg az összes publikált játék",
 } as const;
