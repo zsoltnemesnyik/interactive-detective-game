@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import { GameQueries } from "@/lib/queries";
+import GameDetail from "@/components/sections/games/GameDetail";
 
 const PageSingleGame = async ({ params }: { params: Promise<{ id: string }> }) => {
   const { id } = await params;
@@ -10,11 +11,7 @@ const PageSingleGame = async ({ params }: { params: Promise<{ id: string }> }) =
   if (!game) notFound();
 
   // 3. return: egyelőre csak a game.title egy <h1>-ben
-  return (
-    <>
-      <h1>{game.title}</h1>
-    </>
-  )
+  return <GameDetail game={game} />
 };
 
 export default PageSingleGame;

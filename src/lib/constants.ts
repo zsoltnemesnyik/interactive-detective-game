@@ -11,3 +11,9 @@ export const GAME_DEFAULTS = {
   max_players: 6,
   max_lives: MAX_LIVES,
 }
+
+export const DIFFICULTY_LABELS: Record<string, string> = {
+  easy: "Könnyű",
+  medium: "Közepes",
+  hard: "Nehéz",
+};
