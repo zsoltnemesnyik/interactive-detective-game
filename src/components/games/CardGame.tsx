@@ -6,7 +6,7 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/com
 
 const CardGame = ({ game }: { game: Game }) => {
   return (
-    <Card key={game.id}>
+    <Card>
       <CardHeader>
         <CardTitle>{game.title}</CardTitle>
         <CardDescription>
