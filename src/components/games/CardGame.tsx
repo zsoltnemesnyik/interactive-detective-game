@@ -15,7 +15,7 @@ const CardGame = ({ game }: { game: Game }) => {
         </CardDescription>
       </CardHeader>
       <CardContent>
-        <Link href={`${ROUTES.games}/${game.id}`}>
+        <Link href={`${ROUTES.game}/${game.id}`}>
           <Button className="w-full">{GAMESLIST.startButton}</Button>
         </Link>
       </CardContent>

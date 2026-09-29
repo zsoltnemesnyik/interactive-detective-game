@@ -15,4 +15,18 @@ export const GameQueries = {
 
     return data;
   },
+  getSingleGame: async (id: string) => {
+    const supabase = await createClient();
+
+    const { data, error } = await supabase
+      .from("games")
+      .select("*")
+      .eq("id", id)
+      .single();
+    if (error) {
+      throw new Error(error.message);
+    }
+
+    return data;
+  }
 };
