@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Nunito, Bree_Serif, Special_Elite } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/layout/Navbar";
 
 const nunito = Nunito({
   variable: "--font-nunito",
@@ -36,7 +35,6 @@ export default function RootLayout({
       className={`${nunito.variable} ${breeSerif.variable} ${specialElite.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col">
-        <Navbar />
         {children}
       </body>
     </html>
