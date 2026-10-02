@@ -48,3 +48,11 @@ export const PUBLISHED_GAMES = {
 export const GAMEDETAIL = {
   startButton: "Játék indítása",
 } as const;
+
+export const PAGELOBBY = {
+  joinCodeLabel: "Add meg ezt a kódot",
+  joinUrl: "nyomozas.hu/join",
+  teamLabel: "A csapat",
+  emptySlot: "üres",
+  startButton: "Indulhat a nyomozás",
+} as const;

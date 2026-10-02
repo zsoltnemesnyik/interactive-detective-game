@@ -33,7 +33,7 @@ export const GameQueries = {
     if (error) throw new Error(error.message);
 
     return data;
-  }
+  },
 };
 
 export const SessionQueries = {
@@ -49,5 +49,20 @@ export const SessionQueries = {
     if (error) throw new Error(error.message);
 
     return data;
-  }
+  },
+};
+
+export const PlayerQueries = {
+  getPlayersBySessionId: async (sessionId: string) => {
+    const supabase = await createClient();
+
+    const { data, error } = await supabase
+      .from("players")
+      .select("*")
+      .eq("session_id", sessionId);
+
+    if (error) throw new Error(error.message);
+
+    return data;
+  },
 };
