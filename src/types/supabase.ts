@@ -36,6 +36,25 @@ export type Database = {
                   Relationships: [
                     
                   ]
+                },"players": {
+                  Row: {
+                    "created_at": string | null,"id": string,"name": string,"role": Database["public"]['Enums']["player_role"],"session_id": string | null
+                  }
+                  Insert: {
+                    "created_at"?: string | null,"id"?: string,"name": string,"role"?: Database["public"]['Enums']["player_role"],"session_id"?: string | null
+                  }
+                  Update: {
+                    "created_at"?: string | null,"id"?: string,"name"?: string,"role"?: Database["public"]['Enums']["player_role"],"session_id"?: string | null
+                  }
+                  Relationships: [
+                    {
+      foreignKeyName: "players_session_id_fkey"
+      columns: ["session_id"]
+isOneToOne: false
+      referencedRelation: "sessions"
+      referencedColumns: ["id"]
+    }
+                  ]
                 },"sessions": {
                   Row: {
                     "created_at": string | null,"finished_at": string | null,"game_id": string | null,"id": string,"join_code": string,"lives_remaining": number | null,"status": Database["public"]['Enums']["session_status"]
@@ -64,7 +83,7 @@ isOneToOne: false
             [_ in never]: never
           }
           Enums: {
-            "difficulty": "easy"|"medium"|"hard","session_status": "waiting"|"in_progress"|"completed"
+            "difficulty": "easy"|"medium"|"hard","player_role": "field"|"terminal","session_status": "waiting"|"in_progress"|"completed"
           }
           CompositeTypes: {
             [_ in never]: never
@@ -184,7 +203,7 @@ export const Constants = {
           }
         },"public": {
           Enums: {
-            "difficulty": ["easy", "medium", "hard"],"session_status": ["waiting", "in_progress", "completed"]
+            "difficulty": ["easy", "medium", "hard"],"player_role": ["field", "terminal"],"session_status": ["waiting", "in_progress", "completed"]
           }
         }
 } as const
