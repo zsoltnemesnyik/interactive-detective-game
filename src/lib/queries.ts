@@ -18,6 +18,7 @@ export const GameQueries = {
     const { data, error } = await query;
 
     if (error) throw new Error(error.message);
+
     return data;
   },
   getSingleGame: async (id: string) => {
@@ -28,9 +29,24 @@ export const GameQueries = {
       .select("*")
       .eq("id", id)
       .single();
-    if (error) {
-      throw new Error(error.message);
-    }
+
+    if (error) throw new Error(error.message);
+
+    return data;
+  }
+};
+
+export const SessionQueries = {
+  getSessionByJoinCode: async (joinCode: string) => {
+    const supabase = await createClient();
+
+    const { data, error } = await supabase
+      .from("sessions")
+      .select("*")
+      .eq("join_code", joinCode)
+      .single();
+
+    if (error) throw new Error(error.message);
 
     return data;
   }

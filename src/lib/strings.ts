@@ -32,7 +32,7 @@ export const HOW_IT_WORKS = {
 } as const;
 
 export const GAMESLIST = {
-  startButton: "Indítás",
+  startButton: "Részletek",
   noGames: "Játékok nincsenek",
 } as const;
 
@@ -43,4 +43,8 @@ export const HIGHLIGHTED_GAMES = {
 export const PUBLISHED_GAMES = {
   heading: "Játékok",
   description: "Itt jelenik meg az összes publikált játék",
+} as const;
+
+export const GAMEDETAIL = {
+  startButton: "Játék indítása",
 } as const;
