@@ -1,0 +1,1 @@
+GRANT INSERT ON players TO anon, authenticated;

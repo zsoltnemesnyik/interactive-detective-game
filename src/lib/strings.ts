@@ -56,3 +56,9 @@ export const PAGELOBBY = {
   emptySlot: "üres",
   startButton: "Indulhat a nyomozás",
 } as const;
+
+export const JOIN_MODAL = {
+  heading: "Csatlakozás a játékhoz",
+  description: "Add meg a neved, hogy csatlakozhass a játékhoz.",
+  nameLabel: "Név",
+} as const;

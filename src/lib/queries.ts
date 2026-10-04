@@ -50,6 +50,19 @@ export const SessionQueries = {
 
     return data;
   },
+  joinToSession: async (gameId: string, joinCode: string) => {
+    const supabase = await createClient();
+
+    const { error, data } = await supabase
+      .from("sessions")
+      .insert({
+        game_id: gameId,
+        join_code: joinCode,
+      })
+      .select();
+
+    if (error) throw new Error(error.message);
+  },
 };
 
 export const PlayerQueries = {
