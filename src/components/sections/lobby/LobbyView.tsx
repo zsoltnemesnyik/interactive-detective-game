@@ -8,14 +8,16 @@ import LobbyViewPanel from "../../lobby/LobbyViewPanel";
 import PlayersGrid from "@/components/PlayersGrid";
 import StartButton from "@/components/lobby/StartButton";
 import JoinModal from "@/components/lobby/JoinModal";
+import { useRealtimeLobby } from "@/hooks/useRealtimeLobby";
 
 type LobbyViewProps = {
   session: Session;
-  players: Player[];
+  initialPlayers: Player[];
 };
 
-export default function LobbyView({ session, players }: LobbyViewProps) {
+export default function LobbyView({ session, initialPlayers }: LobbyViewProps) {
   const [showModal, setShowModal] = useState(true);
+  const players = useRealtimeLobby(session.id, initialPlayers);
 
   useEffect(() => {
     const playerId = localStorage.getItem(`player_id_${session.join_code}`);

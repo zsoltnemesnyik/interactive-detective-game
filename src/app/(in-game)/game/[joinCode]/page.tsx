@@ -16,7 +16,7 @@ const PageLobby = async ({
 
   return (
     <div className="flex min-h-screen flex-col bg-cream">
-      <LobbyView session={session} players={players ?? []} />
+      <LobbyView session={session} initialPlayers={players ?? []} />
     </div>
   );
 };
