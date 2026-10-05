@@ -30,6 +30,7 @@ const JoinModal = ({
 
     if (data) {
       localStorage.setItem(`player_id_${sessionId}`, data.id);
+      onClose();
     }
   };
 
