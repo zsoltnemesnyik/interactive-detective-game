@@ -9,6 +9,8 @@ import PlayersGrid from "@/components/PlayersGrid";
 import StartButton from "@/components/lobby/StartButton";
 import JoinModal from "@/components/lobby/JoinModal";
 import { useRealtimeLobby } from "@/hooks/useRealtimeLobby";
+import RoleCards from "./RoleCards";
+import PlayersListWithRoles from "./PlayersListWithRoles";
 
 type LobbyViewProps = {
   session: Session;
@@ -31,6 +33,8 @@ export default function LobbyView({ session, initialPlayers }: LobbyViewProps) {
         emptySlots={GAME_DEFAULTS.max_players - players.length}
         players={players}
       />
+      <RoleCards />
+      <PlayersListWithRoles players={players} />
       <StartButton label={PAGELOBBY.startButton} />
 
       {showModal && (

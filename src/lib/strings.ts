@@ -57,6 +57,17 @@ export const PAGELOBBY = {
   startButton: "Indulhat a nyomozás",
 } as const;
 
+export const ROLE_CARDS = {
+  sectionLabel: "Válassz szerepet",
+  fieldTitle: "Terepen",
+  fieldDescription: "Nálad a térkép, te válaszolsz a helyszínen.",
+  fieldSlots: "1 FŐ",
+  fieldFull: "1 FŐ · BETÖLTVE",
+  terminalTitle: "Terminálon",
+  terminalDescription: "Nyomokat olvasol, jegyzetelsz a csapatnak.",
+  terminalSlots: "2–5 FŐ",
+} as const;
+
 export const JOIN_MODAL = {
   heading: "Csatlakozás a játékhoz",
   description: "Add meg a neved, hogy csatlakozhass a játékhoz.",
