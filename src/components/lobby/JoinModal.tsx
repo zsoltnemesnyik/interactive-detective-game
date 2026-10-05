@@ -17,9 +17,11 @@ import { PlayerClientQueries } from "@/lib/client-queries";
 const JoinModal = ({
   sessionId,
   onClose,
+  joinCode
 }: {
   sessionId: string;
   onClose: () => void;
+  joinCode: string
 }) => {
   const [name, setName] = useState<string>("");
 
@@ -29,7 +31,7 @@ const JoinModal = ({
     const data = await PlayerClientQueries.addPlayerToSession(sessionId, name);
 
     if (data) {
-      localStorage.setItem(`player_id_${sessionId}`, data.id);
+      localStorage.setItem(`player_id_${joinCode}`, data.id);
       onClose();
     }
   };

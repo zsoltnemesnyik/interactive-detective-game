@@ -5,7 +5,6 @@ const LobbyViewPanel = ({ joinCode }: { joinCode: string }) => {
     <div
       className="relative overflow-hidden px-6 py-10 text-center bg-teal-deep"
     >
-      {/* mustard radial fény — design szerint */}
       <div
         className="absolute inset-0"
         style={{
@@ -20,7 +19,6 @@ const LobbyViewPanel = ({ joinCode }: { joinCode: string }) => {
       </p>
       <p
         className="relative font-mono text-5xl tracking-[.16em] text-white"
-        style={{ fontFamily: "'Special Elite', monospace" }}
       >
         {joinCode}
       </p>

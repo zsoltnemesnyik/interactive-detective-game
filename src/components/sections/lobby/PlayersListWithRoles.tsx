@@ -1,12 +1,12 @@
 import { Player } from "@/types"
 
-const PlayersListWithRoles = ({ players }: { players: Player[] }) => {
+const PlayersListWithRoles = ({ players, isHost }: { players: Player[], isHost: boolean }) => {
   return (
     <section>
       {players.length != 0 ? (
         <div className="space-y-2">
           {players.map((player) => (
-            <PlayersListCard key={player.id} player={player} />
+            <PlayersListCard key={player.id} player={player} isHost={isHost} />
           ))}
         </div>
       ) : <p className="text-center">Még nincsenek játékosok</p>}
@@ -16,7 +16,7 @@ const PlayersListWithRoles = ({ players }: { players: Player[] }) => {
 
 export default PlayersListWithRoles
 
-export const PlayersListCard = ({ player }: { player: Player }) => {
+export const PlayersListCard = ({ player, isHost }: { player: Player, isHost: boolean }) => {
   return (
     <div
       className="flex items-center gap-3 bg-paper border border-sage rounded-xl px-4 py-3"
@@ -30,7 +30,7 @@ export const PlayersListCard = ({ player }: { player: Player }) => {
         {player.name}
       </span>
       <span className="font-mono text-[10px] uppercase tracking-widest text-ink-soft">
-        {player.role === "field" ? "TEREPEN" : "TERMINÁL"}
+        {isHost ? "TEREPEN" : "TERMINÁL"}
       </span>
     </div>
   )
