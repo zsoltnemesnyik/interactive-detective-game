@@ -2,15 +2,15 @@ import { Player } from "@/types"
 
 const PlayersListWithRoles = ({ players }: { players: Player[] }) => {
   return (
-    <>
+    <section>
       {players.length != 0 ? (
         <div className="space-y-2">
           {players.map((player) => (
             <PlayersListCard key={player.id} player={player} />
           ))}
         </div>
-      ) : <span>Még nincsenek játékosok</span>}
-    </>
+      ) : <p className="text-center">Még nincsenek játékosok</p>}
+    </section>
   )
 }
 

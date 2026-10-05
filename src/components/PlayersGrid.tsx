@@ -23,7 +23,7 @@ const PlayersGrid = ({
         {players.map((player) => (
           <div key={player.id} className="flex flex-col items-center gap-2">
             <div
-              className={`flex h-20 w-20 items-center justify-center rounded-full text-3xl text-white ${player.role === "field" ? "bg-ink" : "bg-teal"
+              className={`flex h-15 w-15 items-center justify-center rounded-full text-3xl text-white ${player.role === "field" ? "bg-ink" : "bg-teal"
                 }`}
             >
               {player.name.charAt(0).toUpperCase()}
@@ -37,10 +37,9 @@ const PlayersGrid = ({
         {Array.from({ length: emptySlots }).map((_, i) => (
           <div key={`empty-${i}`} className="flex flex-col items-center gap-2">
             <div
-              className="h-20 w-20 rounded-full"
-              style={{ border: "3px dashed #cfc5aa" }}
+              className="h-15 w-15 rounded-full border-dashed border-3 border-ink/10"
             />
-            <span className="text-sm font-bold" style={{ color: "#a99e86" }}>
+            <span className="text-sm font-bold text-ink/20">
               {PAGELOBBY.emptySlot}
             </span>
           </div>
