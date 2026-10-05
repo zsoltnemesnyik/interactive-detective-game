@@ -1,21 +1,15 @@
 import { Player } from "@/types"
-import { GAME_DEFAULTS } from "@/lib/constants"
 
 const PlayersListWithRoles = ({ players }: { players: Player[] }) => {
   return (
     <>
-      {players.length ? 0 && (
-        <div>
-          <p className="font-mono text-xs tracking-widest uppercase text-ink-soft mb-3">
-            Csapat · {players.length} / {GAME_DEFAULTS.max_players}
-          </p>
-          <div className="space-y-2">
-            {players.map((player) => (
-              <PlayersListCard key={player.id} player={player} />
-            ))}
-          </div>
+      {players.length != 0 ? (
+        <div className="space-y-2">
+          {players.map((player) => (
+            <PlayersListCard key={player.id} player={player} />
+          ))}
         </div>
-      ) : <span>nincsenek játékosok</span>}
+      ) : <span>Még nincsenek játékosok</span>}
     </>
   )
 }
@@ -28,7 +22,7 @@ export const PlayersListCard = ({ player }: { player: Player }) => {
       className="flex items-center gap-3 bg-paper border border-sage rounded-xl px-4 py-3"
     >
       <div
-        className="w-8 h-8 rounded-full flex items-center justify-center text-white text-xs font-bold shrink-0"
+        className="w-8 h-8 bg-teal rounded-full flex items-center justify-center text-white text-xs font-bold shrink-0"
       >
         {player.name[0]?.toUpperCase()}
       </div>
@@ -36,7 +30,7 @@ export const PlayersListCard = ({ player }: { player: Player }) => {
         {player.name}
       </span>
       <span className="font-mono text-[10px] uppercase tracking-widest text-ink-soft">
-        {player.role ? "Terepen" : "Terminál"}
+        {player.role === "field" ? "TEREPEN" : "TERMINÁL"}
       </span>
     </div>
   )

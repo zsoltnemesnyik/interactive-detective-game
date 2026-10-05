@@ -16,7 +16,7 @@ const terminalIcon = (
 
 export default function RoleCards() {
   return (
-    <div className="px-4 pb-4">
+    <section className="px-4 pb-4">
       <span className="font-mono text-[9.5px] tracking-widest uppercase text-coral-dark">
         {ROLE_CARDS.sectionLabel}
       </span>
@@ -50,6 +50,6 @@ export default function RoleCards() {
           </div>
         </div>
       </div>
-    </div >
+    </section >
   );
 }

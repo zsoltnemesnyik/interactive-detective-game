@@ -3,8 +3,7 @@ import { PAGELOBBY } from "@/lib/strings";
 const LobbyViewPanel = ({ joinCode }: { joinCode: string }) => {
   return (
     <div
-      className="relative overflow-hidden px-6 py-10 text-center"
-      style={{ background: "#35726e" }}
+      className="relative overflow-hidden px-6 py-10 text-center bg-teal-deep"
     >
       {/* mustard radial fény — design szerint */}
       <div
@@ -15,8 +14,7 @@ const LobbyViewPanel = ({ joinCode }: { joinCode: string }) => {
         }}
       />
       <p
-        className="relative mb-3 text-xs tracking-[.2em] uppercase"
-        style={{ color: "rgba(255,255,255,.7)" }}
+        className="relative mb-3 text-xs tracking-[.2em] uppercase text-white/70"
       >
         {PAGELOBBY.joinCodeLabel}
       </p>
@@ -27,8 +25,7 @@ const LobbyViewPanel = ({ joinCode }: { joinCode: string }) => {
         {joinCode}
       </p>
       <p
-        className="relative mt-2 text-sm font-bold"
-        style={{ color: "rgba(255,255,255,.72)" }}
+        className="relative mt-2 text-sm font-bold text-white/70"
       >
         {PAGELOBBY.joinUrl}
       </p>

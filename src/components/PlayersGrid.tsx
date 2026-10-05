@@ -23,11 +23,8 @@ const PlayersGrid = ({
         {players.map((player) => (
           <div key={player.id} className="flex flex-col items-center gap-2">
             <div
-              className="flex h-20 w-20 items-center justify-center rounded-full text-3xl text-white"
-              style={{
-                fontFamily: "'Bree Serif', serif",
-                background: player.role === "field" ? "#4f9c97" : "#8a5a34",
-              }}
+              className={`flex h-20 w-20 items-center justify-center rounded-full text-3xl text-white ${player.role === "field" ? "bg-ink" : "bg-teal"
+                }`}
             >
               {player.name.charAt(0).toUpperCase()}
             </div>
